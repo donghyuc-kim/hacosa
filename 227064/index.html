@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<title>227064/jquery+appendTo</title>
+
+<h1>테스트</h1>
+
+<p>
+  <em>one</em>
+  <em>two</em>
+  <span><em>three</em></span>
+</p>
+
+<div>
+  <span>ancestor descendent로 검색된 엘리먼트 : </span>
+  <span class="result1"></span>
+</div>
+
+
+<script src="http://image.nsmall.com/ec_comimages/nsdesign/js/jquery-1.8.2.min.js"></script>
+<script>
+  $("p em").css("background-color","yellow").each(function(){
+    $(this).clone().appendTo(".result1");
+  });
+</script>
