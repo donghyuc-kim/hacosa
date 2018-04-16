@@ -1,5 +1,5 @@
 // case1 
-// arguments 라는 이름으로 파라메터를 배열처럼 사용할 수 있습니다. 
+// arguments 라는 이름으로 function 내부에서 파라메터를 배열처럼 사용할 수 있습니다. 
 
 function toggle() {
     console.log(arguments[0]);
