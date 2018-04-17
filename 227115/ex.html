@@ -35,5 +35,9 @@
 <!-- case3 -->
 <!-- 참고 URL : https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects -->
 <script>
-    var fData2 = new FormData(fm1); 
+    var fData2 = '';  
+
+    fm1.onsubmit = function() {
+        fData2 = new FormData(fm1); 
+    };
 </script>
