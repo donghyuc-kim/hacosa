@@ -1,0 +1,39 @@
+<form action="" method="" id="fm1">
+    <input type="text" name="userid" id="userid">
+    <input type="password" name="pwd" id="pwd">
+    <button>로그인</button>
+</form>
+
+
+<!-- case1 -->
+<script>
+    var fm1 = document.getElementById('fm1'); 
+    var userid = document.getElementById('userid');
+    var pwd = document.getElementById('pwd'); 
+
+    var fData = {
+        userid: '', 
+        pwd: ''
+    };
+
+    fm1.onsubmit = function() {
+        fData.userid = userid.value; 
+        fData.pwd = pwd.value; 
+    };
+</script>
+
+
+<!-- case2 -->
+<script>
+    fm1.onsubmit = function() {
+        fData.userid = fm1.elements.userid; 
+        fData.pwd = fm1.elements.pwd; 
+    };
+</script>
+
+
+<!-- case3 -->
+<!-- 참고 URL : https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects -->
+<script>
+    var fData2 = new FormData(fm1); 
+</script>
