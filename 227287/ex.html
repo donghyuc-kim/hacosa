@@ -1,0 +1,58 @@
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td {
+        padding: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .th-1 {
+        width: 100px;
+        background-color: #eee; 
+        color: #333; 
+    }
+
+    .th-2 {
+        width: 100px;
+        background-color: #333; 
+        color: #fff; 
+    }
+
+    .th-1, 
+    .th-2 {
+        text-align: center; 
+    }
+
+</style>
+
+<table>
+    <tr>
+        <td class="th-1">th</td>
+        <td>td</td>
+        <td class="th-1">th</td>
+        <td>td</td>
+    </tr>
+    <tr>
+        <td class="th-1">th</td>
+        <td colspan="3">
+
+            <table>
+                <tr>
+                    <td colspan="2">이미지1, 텍스트1</td>
+                </tr>
+                <tr>
+                    <td class="th-2">이미지</td>
+                    <td>....</td>
+                </tr>
+                <tr>
+                    <td class="th-2">문자</td>
+                    <td>...</td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
