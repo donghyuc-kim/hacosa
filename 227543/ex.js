@@ -5,10 +5,10 @@ function c() {
         // throw e;
         // output : ReferenceError: xxx is not defined
 
-        // throw new Error('Error가 발생했습니다.');
+        throw new Error('Error가 발생했습니다.');
         // output : Error: Error가 발생했습니다.
 
-        return e.message;
+        // return e.message;
         // output : cv xxx is not defined
     } finally {
         return 'return-c-finally';
