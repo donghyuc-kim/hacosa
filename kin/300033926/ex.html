@@ -1,0 +1,49 @@
+<style>
+    fieldset, 
+    div {
+        margin: 8px; 
+    }
+
+    input[disabled] { 
+        background-color: #eee; 
+    }
+</style>
+
+<form id="fm1">
+    <fieldset>
+        <legend>라디오 그룹</legend>
+
+        <label><input type="radio" name="radio1" value="y"> Yes</label>
+        <label><input type="radio" name="radio1" value="n"> No</label>
+    </fieldset>
+
+    <div>데이타 : <input type="text" name="date1"></div>
+    <div>데이타 날짜 : <input type="text" name="date2"></div>
+</form>
+
+
+<script>
+    for ( var i = 0; i < fm1.radio1.length; i++ ) {
+        fm1.radio1[i].onclick = function() {
+            if ( this.checked === true ) {
+
+                switch(this.value) {
+                    case 'y':
+                        setDisabled(true);
+                        break; 
+                    case 'n': 
+                        setDisabled(false);
+                        break; 
+                    default: 
+                        break; 
+                }
+
+            }
+        };
+    }
+
+    function setDisabled(value) {
+        fm1.date1.disabled = value; 
+        fm1.date2.disabled = value; 
+    }
+</script>
