@@ -1,0 +1,32 @@
+<style>
+    input[type="radio"]:checked + label { 
+        background-color: #ccc;
+    }
+</style>
+
+<form>
+    <fieldset>
+        <legend>라디오버튼 그룹</legend>
+
+        <input type="radio" name="rda" id="rda1" checked> <label for="rda1">영어</label> 
+        <input type="radio" name="rda" id="rda2"> <label for="rda2">일본어</label> 
+        <input type="radio" name="rda" id="rda3"> <label for="rda3">중국어</label> 
+    </fieldset>
+</form>
+
+
+<style>
+    input[type="radio"]:checked + span { 
+        background-color: #ccc;
+    }
+</style>
+
+<form>
+    <fieldset>
+        <legend>라디오버튼 그룹</legend>
+
+        <label><input type="radio" name="rdb" checked> <span>영어</span></label> 
+        <label><input type="radio" name="rdb"> <span>일본어</span></label> 
+        <label><input type="radio" name="rdb"> <span>중국어</span></label> 
+    </fieldset>
+</form>
