@@ -1,0 +1,30 @@
+
+<input type="range" name="bt_zoom_range" min="0" max="511" step="any" value="0" id="bt_zoom_range">
+
+<script>
+    bt_zoom_range.oninput = function() {
+        // 드래그 할 때마다 이벤트 발생
+        console.log('oninput', this.value);
+        xhr(this.value); 
+    };    
+
+    bt_zoom_range.onchange = function() {
+        // 드래그를 끝냈을 때 마지막에 이벤트 발생 
+        console.log('change', this.value);
+        xhr(this.value); 
+    };
+
+    function xhr( value ) {
+        var req = new XMLHttpRequest();
+        req.open('POST', 'http://abc.com/api', true);
+        req.onreadystatechange = function (aEvt) {
+            if (req.readyState === 4) {
+                if(req.status === 200) {
+                    // console.log('OK', req.responseText);
+                } else {
+                    // Error 
+                }
+        };
+        req.send('value='+value);
+    }
+</script>
