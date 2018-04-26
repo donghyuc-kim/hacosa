@@ -7,6 +7,7 @@ function Person(name){
 
 Person.prototype.name=null;
 Person.prototype.introduce=null;
+// }
 
 function Programmer(name){
   this.name = name;
