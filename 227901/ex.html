@@ -1,0 +1,14 @@
+<form action="http://a.b.com" method="POST" id="fm1">
+    <input type="text" name="text1" id="text1">
+    <button>전송</button>
+</form>
+
+<script>
+    fm1.onsubmit = function() {
+        var result = window.confirm('정말 보내시겠습니까?');
+
+        if ( result === false ) {
+            return false; 
+        }
+    };
+</script>
