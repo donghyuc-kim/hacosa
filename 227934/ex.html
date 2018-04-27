@@ -1,0 +1,33 @@
+<script>
+    function Student(name, korean, math, eglish, science){
+        this.이름 = name;
+        this.국어 = korean;
+        this.수학 = math;
+        this.영어 = eglish;
+        this.과학 = science;
+        this.getSum = function(){
+            return this.국어 + this.수학 + this.영어 + this.과학;
+        };
+        this.getAverage = function(){
+            return this.getSum() / 4;
+        };
+        this.toString = function(){
+            return this.이름 + '\t' + this.getSum() + '\t' + this.getAverage();
+        };
+    }
+
+    var Student [];
+
+    Students.push(new Student('가나다', 87, 98, 86, 95));
+    Students.push(new Student('마바사', 80, 45, 90, 98));
+    Students.push(new Student('아자카', 87, 80, 86, 91));
+    Students.push(new Student('타파하', 93, 91, 86, 97));
+    
+    var output = '이름\t종점\t평균\n';
+
+    for (var i in Student) {
+        output += Student[i].toString() + '\n';
+    }
+    
+    alert(output);
+</script>
