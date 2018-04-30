@@ -12,15 +12,14 @@
 } */
 
 
-.mobile {
+.div {
     border: 20px solid red; 
 }
 
 
 @media screen and (min-width: 640px) {
-    .pc {
+    .div {
         width: 640px;
     }
 }
-
 
