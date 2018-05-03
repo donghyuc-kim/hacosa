@@ -1,0 +1,12 @@
+<div data-param="1">1</div>
+<div data-param="2">2</div>
+
+<script>
+    var divList = document.getElementsByTagName('DIV'); 
+
+    for ( var i = 0; i < divList.length; i++ ) {
+        divList[i].onclick = function() {
+            console.log(Number(this.getAttribute('data-param'))); 
+        };
+    }
+</script>
