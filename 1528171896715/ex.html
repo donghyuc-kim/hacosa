@@ -3,38 +3,53 @@
 <head>
 <meta charst="UTF-8">
 <title>이벤트 객체의 target</title>
+<style>
+    .item {
+        cursor: pointer;
+    }
+    .item:hover {
+        background-color: #f8f8f8;
+    }
+    
+    .list[data-current="0"] .item[data-index="0"], 
+    .list[data-current="1"] .item[data-index="1"], 
+    .list[data-current="2"] .item[data-index="2"], 
+    .list[data-current="3"] .item[data-index="3"] {
+        font-size: 1.3em;
+    }
+</style>
 </head>
-<body onload="init()">
-<script>
-function init(){
- var text = document.getElementsByTagName("li");
- for(i=0; i<text.length; i++) {
-  text[i].addEventListener("click", click, false);  
- }
-}
-function click(e){
- var n=0;
- switch(e.target.id) {
-  case "0" : n = 0; break;
-  case "1" : n = 1; break;
-  case "2" : n = 2; break;
-  case "3" : n = 3; break;
-  }
-  Stronger(e.target,e);
- }
-function Stronger(text, e){
- text.style.fontsize="1.3em";
-} 
- 
-</script>
-<h3>아이템을 클릭하면 1.3배 크기로</h3>
-<hr>
+<body>
+
+<h1>아이템을 클릭하면 1.3배 크기로</h1>
 <p>여름 방학 때 하고 싶은 것들
-<ul>
- <li id='0'>자전거로 대한민국 일주</li>
- <li id='1'>책 100권 읽기</li>
- <li id='2'>철인 3종 경기 준비</li>
- <li id='3'>자바스크립트 정복</li>
+
+<ul id="list" class="list" data-current="">
+    <li class="item" data-index="0">자전거로 대한민국 일주</li>
+    <li class="item" data-index="1">책 100권 읽기</li>
+    <li class="item" data-index="2">철인 3종 경기 준비</li>
+    <li class="item" data-index="3">자바스크립트 정복</li>
 </ul>
+
+<script>
+    var list = document.getElementById('list'); 
+    var items = list.getElementsByTagName("li");
+
+    for ( var i=0; i<items.length; i++) {
+        items[i].onclick = function(e) {
+            var current = list.getAttribute('data-current'); 
+            var index = this.getAttribute('data-index'); 
+
+            if ( current === index ) {
+                index = ''; 
+            }
+
+            list.setAttribute(
+                'data-current', 
+                index
+            ); 
+        };
+    }
+</script>
 </body>
 </html>
