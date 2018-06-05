@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charst="UTF-8">
+<title>이벤트 객체의 target</title>
+</head>
+<body onload="init()">
+<script>
+function init(){
+ var text = document.getElementsByTagName("li");
+ for(i=0; i<text.length; i++) {
+  text[i].addEventListener("click", click, false);  
+ }
+}
+function click(e){
+ var n=0;
+ switch(e.target.id) {
+  case "0" : n = 0; break;
+  case "1" : n = 1; break;
+  case "2" : n = 2; break;
+  case "3" : n = 3; break;
+  }
+  Stronger(e.target,e);
+ }
+function Stronger(text, e){
+ text.style.fontsize="1.3em";
+} 
+ 
+</script>
+<h3>아이템을 클릭하면 1.3배 크기로</h3>
+<hr>
+<p>여름 방학 때 하고 싶은 것들
+<ul>
+ <li id='0'>자전거로 대한민국 일주</li>
+ <li id='1'>책 100권 읽기</li>
+ <li id='2'>철인 3종 경기 준비</li>
+ <li id='3'>자바스크립트 정복</li>
+</ul>
+</body>
+</html>
