@@ -1,22 +1,28 @@
 <!doctype html>
-<meta charset="utf-8">
-<title>랜덤 배경색 변경하기</title>
-<script>
-  // 0 (포함) 부터 len (불포함) 사이의 임의 정수를 반환 
-  // 참고 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-  function getRandomInt(len) {
-    // return Math.floor(Math.random() * (len - 0)) + 0;
-    return Math.floor(Math.random() * (len));
-  }
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>랜덤 배경색 변경하기</title>
+  </head>
+  <body>
+    <script>
+      // 0 (포함) 부터 len (불포함) 사이의 임의 정수를 반환 
+      // 참고 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+      function getRandomInt(len) {
+        // return Math.floor(Math.random() * (len - 0)) + 0;
+        return Math.floor(Math.random() * (len));
+      }
 
-  function setBackgroundRandomColor() {
-      var colors = ["blue","beige","skyblue","lightgreen","gray"];
-      var index = getRandomInt(colors.length);
+      function setBackgroundRandomColor() {
+          var colors = ["blue","beige","skyblue","lightgreen","gray"];
+          var index = getRandomInt(colors.length);
 
-      document.body.style.backgroundColor = colors[index];
-  }
+          document.body.style.backgroundColor = colors[index];
+      }
 
-  window.onload = function() {
-    setBackgroundRandomColor();
-  };
-</script>
+      window.onload = function() {
+        setBackgroundRandomColor();
+      };
+    </script>
+  </body>
+</html>
