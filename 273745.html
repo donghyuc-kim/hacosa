@@ -6,11 +6,13 @@
 <meta content="width=device-width,user-scalable=no"name="viewport">
 <meta content="noindex,nofollow"name="robots">
 <style>
+    
     .container { 
         margin: 16px;
         font-size: xx-large;
         text-align: center; 
     }
+    
     .container[data-current="0"] .item[data-index="0"], 
     .container[data-current="1"] .item[data-index="1"], 
     .container[data-current="2"] .item[data-index="2"], 
@@ -19,47 +21,53 @@
     .container[data-current="5"] .item[data-index="5"], 
     .container[data-current="6"] .item[data-index="6"], 
     .container[data-current="7"] .item[data-index="7"], 
-    .container[data-current="8"] .item[data-index="8"] { display: block;  }
+    .container[data-current="8"] .item[data-index="8"] { display: block; }
+    
     .item { display: none; }
+    
 </style>
 </head>
 <body>
-<div class="container" data-current="0" id="container">
-    <span class="item" data-index="0">안녕</span>
-    <span class="item" data-index="1">hello!</span>
-    <span class="item" data-index="2">你好!</span>
-    <span class="item" data-index="3">こんにちは!</span>
-    <span class="item" data-index="4">Bonjour!</span>
-    <span class="item" data-index="5">Hallo!</span>
-    <span class="item" data-index="6">Hola</span>
-    <span class="item" data-index="7">Salve!</span>
-    <span class="item" data-index="8">Ciao!</span>
-</div>
-<script>
-    var view_co = {
-        el: {}, 
-        index: 0, 
-        index_max: 0, 
-        start: function() {
-            this.el = document.getElementById('container'); 
-            this.index_max = this.el.children.length;
 
-            setInterval(function() {
-                view_co.next();
-            }, 300);
-        }, 
-        next: function() {
-            this.index++; 
+    <div class="container" data-current="0" id="container">
+        <span class="item" data-index="0">안녕</span>
+        <span class="item" data-index="1">hello!</span>
+        <span class="item" data-index="2">你好!</span>
+        <span class="item" data-index="3">こんにちは!</span>
+        <span class="item" data-index="4">Bonjour!</span>
+        <span class="item" data-index="5">Hallo!</span>
+        <span class="item" data-index="6">Hola</span>
+        <span class="item" data-index="7">Salve!</span>
+        <span class="item" data-index="8">Ciao!</span>
+    </div>
 
-            if ( this.index === this.index_max ) {
-                this.index = 0; 
+    <script>
+        
+        var view_co = {
+            el: {}, 
+            index: 0, 
+            index_max: 0, 
+            start: function() {
+                this.el = document.getElementById('container'); 
+                this.index_max = this.el.children.length;
+
+                setInterval(function() {
+                    view_co.next();
+                }, 300);
+            }, 
+            next: function() {
+                this.index++; 
+
+                if ( this.index === this.index_max ) {
+                    this.index = 0; 
+                }
+
+                this.el.setAttribute('data-current', this.index); 
             }
+        };
 
-            this.el.setAttribute('data-current', this.index); 
-        }
-    };
-
-    view_co.start(); 
-</script>
+        view_co.start(); 
+        
+    </script>
 </body>
 </html>
