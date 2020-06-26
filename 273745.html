@@ -43,7 +43,7 @@
 
     <script>
         
-        var view_co = {
+        var container_co = {
             el: {}, 
             index: 0, 
             index_max: 0, 
@@ -52,7 +52,7 @@
                 this.index_max = this.el.children.length;
 
                 setInterval(function() {
-                    view_co.next();
+                    container_co.next();
                 }, 300);
             }, 
             next: function() {
@@ -66,7 +66,7 @@
             }
         };
 
-        view_co.start(); 
+        container_co.start(); 
         
     </script>
 </body>
