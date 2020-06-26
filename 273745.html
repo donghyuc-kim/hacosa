@@ -51,8 +51,8 @@
                 this.el = document.getElementById('container'); 
                 this.index_max = this.el.children.length;
 
-                setInterval(()=>{
-                    this.next();
+                setInterval(function() {
+                    view_co.next();
                 }, 300);
             }, 
             next: function() {
