@@ -17,37 +17,39 @@
 </head>
 <body>
 
-    <div class="container" id="container"></div>
-    <button id="button" onclick="button_ho.click();">Start</buttonn>
+    <div class="container" id="container">.</div>
+    <button id="button" onclick="button_co.click();">Start</buttonn>
 
     <script>
         
         var container_co = {
             el: document.getElementById('container'), 
             index: 0,
+            index_max: 6,
             interval: {},
             start: function() {
                 this.interval = setInterval(function() {
                     container_co.next();
                 }, 1000);
                 
-                button_ho.disabled();
+                button_co.disabled();
             }, 
             next: function() { 
-                this.el.innerHTML = this.index++;
+                this.index++;
+                this.el.innerHTML = this.index;
 
-                if ( this.index === 6 ) {
+                if ( this.index === this.index_max ) {
                     this.stop();
                 }
             }, 
             stop: function() {
                 clearInterval(this.interval);
                 
-                button_ho.enabled();
+                button_co.enabled();
             }
         };
 
-        var button_ho = {
+        var button_co = {
             el: document.getElementById('button'), 
             disabled: function() {
                 this.el.disabled = true; 
