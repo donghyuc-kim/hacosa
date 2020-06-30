@@ -27,14 +27,14 @@
             index: 0,
             interval: {},
             start: function() {
-                button_ho.disabled();
                 this.interval = setInterval(function() {
                     container_co.next();
                 }, 1000);
+                
+                button_ho.disabled();
             }, 
-            next: function() {
-                this.index++; 
-                this.el.innerHTML = this.index;
+            next: function() { 
+                this.el.innerHTML = this.index++;
 
                 if ( this.index === 6 ) {
                     this.stop();
@@ -42,6 +42,7 @@
             }, 
             stop: function() {
                 clearInterval(this.interval);
+                
                 button_ho.enabled();
             }
         };
