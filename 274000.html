@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>hacosa/274000</title>
+<meta content="width=device-width,user-scalable=no"name="viewport">
+<meta content="noindex,nofollow"name="robots">
+<style>
+    
+    .container { 
+        margin: 16px;
+        height: 1em;
+        font-size: xx-large;
+    }
+    
+</style>
+</head>
+<body>
+
+    <div class="container" id="container"></div>
+    <button id="button" onclick="button_ho.click();">Start</buttonn>
+
+    <script>
+        
+        var container_co = {
+            el: document.getElementById('container'), 
+            index: 0,
+            interval: {},
+            start: function() {
+                button_ho.disabled();
+                this.interval = setInterval(function() {
+                    container_co.next();
+                }, 1000);
+            }, 
+            next: function() {
+                this.index++; 
+                this.el.innerHTML = this.index;
+
+                if ( this.index === 6 ) {
+                    this.stop();
+                }
+            }, 
+            stop: function() {
+                clearInterval(this.interval);
+                button_ho.enabled();
+            }
+        };
+
+        var button_ho = {
+            el: document.getElementById('button'), 
+            disabled: function() {
+                this.el.disabled = true; 
+            }, 
+            enabled: function() {
+                this.el.disabled = false;
+            },
+            click: function() {
+                container_co.start();
+            }
+        };
+        
+    </script>
+</body>
+</html>
